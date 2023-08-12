@@ -1,0 +1,34 @@
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\ref\BLL.dll
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\DAL.dll
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\Model.dll
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\DAL.pdb
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\Model.pdb
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\luan2\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.pdb
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\BLL.deps.json
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\BLL.dll
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\BLL.pdb
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\DAL.dll
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\Model.dll
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\DAL.pdb
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\bin\Debug\net6.0\Model.pdb
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.dll
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\refint\BLL.dll
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\BLL.pdb
+D:\DELL E7450\OneDrive\Máy tính\API\Quản lý bán sách\BLL\obj\Debug\net6.0\ref\BLL.dll

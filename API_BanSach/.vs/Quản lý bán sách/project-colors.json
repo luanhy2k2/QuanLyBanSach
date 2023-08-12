@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e77e4f05-3507-4de5-9b15-0c0a688a8bbd": {
+      "ProjectGuid": "e77e4f05-3507-4de5-9b15-0c0a688a8bbd",
+      "DisplayName": "API QuanTri",
+      "ColorIndex": 0
+    },
+    "68732f98-4cef-42be-a7b9-21551d59d1d5": {
+      "ProjectGuid": "68732f98-4cef-42be-a7b9-21551d59d1d5",
+      "DisplayName": "ClassLibrary1",
+      "ColorIndex": 1
+    },
+    "7eb404d7-b6c4-478e-bb93-3249b064129b": {
+      "ProjectGuid": "7eb404d7-b6c4-478e-bb93-3249b064129b",
+      "DisplayName": "Model",
+      "ColorIndex": 2
+    },
+    "cf0bcf7f-97eb-4c66-9b91-3b6fdb712045": {
+      "ProjectGuid": "cf0bcf7f-97eb-4c66-9b91-3b6fdb712045",
+      "DisplayName": "BLL",
+      "ColorIndex": 3
+    },
+    "ca5b8abf-9d8d-4514-b95c-c51da5b23cc8": {
+      "ProjectGuid": "ca5b8abf-9d8d-4514-b95c-c51da5b23cc8",
+      "DisplayName": "DAL",
+      "ColorIndex": 4
+    },
+    "3424fb95-14aa-47e3-b2e7-74bf54c42790": {
+      "ProjectGuid": "3424fb95-14aa-47e3-b2e7-74bf54c42790",
+      "DisplayName": "ClassLibrary2",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 6
+}
