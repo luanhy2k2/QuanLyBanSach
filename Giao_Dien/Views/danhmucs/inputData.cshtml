@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "inputData";
+    Layout = "~/Areas/AdminCP/Views/Shared/_layoutadmin.cshtml";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<div class="container-fluid" ng-app="myapp" ng-controller="myctr">
+    <form ng-submit="addData()">
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Thêm danh mục</h4>
+
+            <div class="form-group">
+                Tên danh mục
+                <div class="col-md-10">
+                    <input type="text" ng-model="danhmucs.danhmuc_name" class="form-control" />
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-warning" type="submit">addData</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script>
+        var myapp = angular.module('myapp', []);
+        myapp.controller('myctr', function ($scope, $http, $httpParamSerializerJQLike) {
+            $scope.danhmucs = {};
+            $scope.addData = function () {
+                Token = angular.element('input[name="__RequestVerificationToken"]').attr('value');
+                $scope.danhmucs.__RequestVerificationToken = Token;
+                dataRequest = $scope.danhmucs;
+                console.log(dataRequest);
+                $http({
+                    method: 'POST',
+                    url: '/AdminCP/danhmucs/inputData',
+                    data: $httpParamSerializerJQLike(dataRequest),
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded; charset = UTF-8'}
+
+                }).then(function (res) {
+                    console.log(res);
+                    if (res.data.msg == false)
+                    {
+                        alert("Lỗi dữ liệu");
+                    }
+                    else {
+                        alert("Thêm dữ liệu thành công");
+                        window.location.href = "/AdminCP/danhmucs/viewdata";
+                    }
+                })
+            }
+        }
+            )
+    </script>
+   }

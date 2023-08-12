@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Simple Login Form</title>
+    <meta charset="UTF-8" />
+    <meta name="Designer" content="PremiumPixels.com">
+    <meta name="Author" content="$hekh@r d-Ziner, CSSJUNTION.com">
+
+    <link href="~/Assets/Admin/css/structure.css" rel="stylesheet" />
+    <link href="~/Assets/Admin/css/reset.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h4> @ViewBag.Thongbao</h4>
+
+    <div class="box login">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <form>
+                <fieldset class="boxBody">
+                    <label>Username</label>
+                    <input type="text" name="UserName" tabindex="1" placeholder="PremiumPixel" required>@ViewData["loi1"]
+                    <label><a href="#" class="rLink" tabindex="5">Forget your password?</a>Password</label>
+                    <input type="password" name="PassWord" tabindex="2" required>@ViewData["loi2"]
+                </fieldset>
+                <footer>
+                    @*<label><input type="checkbox" tabindex="3">Keep me logged in</label>*@
+                    <button type="submit" class="btn" value="Login">Login</button>
+                </footer>
+                @*<fieldset class="boxBody">
+                        <label>Username</label>
+                        <input type="text" name="UserName" tabindex="1" placeholder="PremiumPixel" required>@ViewData["loi1"]
+                        <label><a href="#" class="rLink" tabindex="5">Forget your password?</a>Password</label>
+                        <input type="password" name="PassWord" tabindex="2" required>@ViewData["loi2"]
+                    </fieldset>
+                <footer>
+                        <label><input type="checkbox" tabindex="3">Keep me logged in</label>
+                        <button type="submit" class="btn" value="Login"></button>
+                    </footer>*@
+
+
+            </form>
+
+        }
+    </div>
+    
+</body>
+</html>

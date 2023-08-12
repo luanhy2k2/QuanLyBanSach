@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Dan3.Models.Loaisp>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminCP/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+
+<div class="col-12 col-s-12 content">
+    <div class="col-8 col-s-12 content">
+        <div class="tabcontent">
+            <div class="title">
+                <i class="fas fa-users"></i> Danh sách thể loại
+
+                <hr>
+                <p>
+                    @Html.ActionLink("Thêm loại sách", "Create", null, new { @Class = "btn btn-success fa fa-plus" })
+                </p>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped" id="dataTable">
+        <thead>
+
+            <tr>
+                <th>Số thứ tự</th>
+                <th>
+                    Tên thể loại
+                </th>
+                <th>Tên danh mục</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(i++)</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.loai_name)
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.danhmucs.danhmuc_name)</td>
+                    <td>
+                        @Html.ActionLink(" ", "Edit", new { id = item.loai_id }, new { @Class = "btn btn-warning fa fa-pencil" }) |
+                        @Html.ActionLink(" ", "Details", new { id = item.loai_id }, new { @Class = "btn btn-info fa fa-eye" }) |
+                        @Html.ActionLink(" ", "Delete", new { id = item.loai_id }, new { @Class = "btn btn-danger fa fa-trash", @Onclick = "return confirm('Bạn có muốn xóa không?')" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @section scripts
+{
+        <!-- Page level plugins -->
+        <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="~/Assets/Admin/js/demo/datatables-demo.js"></script>
+    }
+</div>

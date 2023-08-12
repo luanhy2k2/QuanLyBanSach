@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Dan3.Models.TinTuc>
+
+<div class="col-8 col-s-12 content">
+    <div class="tabcontent">
+        <div class="title">
+            <i class="fas fas fa-boxes"></i> Danh sách tin tức
+
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-s-12 padding-box">
+                <table class="" id="dataTable">
+                    <thead>
+
+                        <tr>
+                            <th>Mã tin tức</th>
+
+                            <th>Tên tin tức</th>
+                            <th>Nội dung</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TinTucID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tintuc_name)
+                            </td>
+                            <td>@Html.Raw(item.NoiDung)</td>
+                            <td>
+                                @Html.ActionLink(" ", "Edit", new { id = item.TinTucID }, new { @Class = "btn btn-warning fa fa-pencil" })
+
+                                @Html.ActionLink(" ", "Delete", new { id = item.TinTucID }, new { @Class = "btn btn-danger fa fa-trash", @Onclick = "return confirm('Bạn có muốn xóa không?')" })
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Assets/Admin/js/demo/datatables-demo.js"></script>
+}
+

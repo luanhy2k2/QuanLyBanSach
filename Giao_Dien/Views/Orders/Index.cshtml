@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Dan3.Models.Orders>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminCP/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<div class="col-12 col-s-12 content">
+    <div class="col-8 col-s-12 content">
+        <div class="tabcontent">
+            <div class="title">
+                <i class="fas fa-users"></i> Đơn hàng
+
+                <hr>
+
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped" id="dataTable">
+        <thead>
+
+            <tr>
+                <th>Mã đơn hàng</th>
+                <th>Tên khách hàng</th>
+                <th>Số điện thoại </th>
+                <th>Email</th>
+                <th>Địa chỉ</th>
+
+               
+                <th>Sản phẩm</th>
+                <th>Giá cả</th>
+                <th>Số lượng</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.CustomerSDT)</td>
+                <td>@Html.DisplayFor(modelItem => item.CustomerEmail)</td>
+                <td>@Html.DisplayFor(modelItem => item.CustomerAddress)</td>
+                
+                
+                <td>@Html.DisplayFor(modelItem => item.OrderDetail.Sanpham.sanp_name)</td>
+                <td>@Html.DisplayFor(modelItem => item.OrderDetail.price)</td>
+                <td>@Html.DisplayFor(modelItem => item.OrderDetail.quantity)</td>
+
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @Class = "btn btn-warning fa fa-pencil" }) |
+                    @Html.ActionLink(" ", "Details", new { id = item.ID }, new { @Class = "btn btn-info fa fa-eye" }) |
+                    @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { @Class = "btn btn-danger fa fa-trash", @Onclick = "return confirm('Bạn có muốn xóa không?')" }) |
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
+@section scripts
+{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Assets/Admin/js/demo/datatables-demo.js"></script>
+}

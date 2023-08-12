@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../CSS/cs.css">
+        <link rel="stylesheet" href="../CSS/core.css">
+        <link rel="stylesheet" href="../CSS/book.css">
+        <script src="../angular/angular.min.js"></script>
+        <script src="../angular/global.js"></script>
+	    <script src="../angular/home.js"></script>
+    </head>
+    <body ng-app="AppBanHang" ng-controller="ChitietCtrl">
+
+
+
+        <div class="dau">
+            <ul class="trai">
+                <li>
+                    <a href="#">Giới thiệu</a>
+                </li>
+                <li>
+                    <a href="#">Lịch sử giao dịch</a>
+                </li>
+                <li>
+                    <a href="">Kiểm tra đơn hàng</a>
+                </li>
+            </ul>
+            <ul class="phai">
+                <li>
+                    <a href="form/login.html">Đăng nhập</a>
+                </li>
+                <li>
+                    <a href="form/dangki.html">Đăng kí</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <div class="wrapper wrap">
+                <h1 class="logo">
+                    <a href="../Untitled-1.html">NhaNam</a>
+                </h1>
+            
+                
+                <div class="search">
+                    <form action="/tim-kiem" method="GET" novalidate="novalidate">
+            
+                        <input type="text" name="q" placeholder="Tìm kiếm sách..." class="text">
+                        <input type="submit" value="Tìm kiếm" class="submit">
+                    </form>
+            
+                </div>
+            </div>
+             
+        </div>
+        <div id="mainnav">
+
+            <div class="wrapper">
+        
+                <ul class="menu">
+                    <li>
+                        <a href="z">
+                            Danh mục sách
+                        </a>
+                        <ul ng-controller="HomeCtrl" class="submenu">
+                            
+                            <li ng-repeat="x in listLoaiSp" ><a href="../form/sachbanchay.html?ten={{x.loai_id}}">{{x.loai_name}}</a></li>
+                               
+        
+                        </ul>
+        
+                    </li>
+                    <!-- <li>
+                        <a href="/combo-sach">Combo Sách</a>
+                    </li> -->
+        
+                    <li>
+                        <a href="#">Sách bán chạy</a>
+                    </li>
+        
+                    <li>
+                        <a href="#">Chương trình khuyến mãi</a>
+                    </li>			
+        
+                    <li>
+                        <a href="/#">Giảm giá đặc biệt</a>
+                    </li>
+            
+        
+        
+                    
+                </ul>
+        
+            </div>
+        
+        </div>
+        <div class="bodi">
+            <div class="container">
+                <div class="bookdetailwrap">          
+                    <div class="bookdetail">
+                        <a class="image image" href="#">
+                            
+                            <img style="height:90%; width: 75%;" src="../image/book/{{SachModel.image}}">
+                            
+                            
+                        </a>
+                
+                        <div class="info">
+                
+                            <h1>
+                                <a href="#">{{SachModel.sanp_name}}</a>
+                            </h1>
+
+                            <div class="intro">
+                
+                                <div class="attributes">
+                                    <ul>
+                
+                                        <li class="dataattr">
+                                            Mã sản phẩm:
+                                            <a href="#">{{SachModel.sanp_id}}</a>
+                                        </li>
+                                        <li class="dataattr">
+                                            Tác giả: 
+                                            <a href="../form/GetSanPhamByTacGia.html?id={{SachModel.tG_id}}"> {{SachModel.tG_name}}</a>
+                                        </li>
+                                        
+                                        <li class="dataattr">
+                                            Nhà xuất bản:
+                                            <a href="../form/GetSanPhamByTacGia.html?id={{SachModel.nsx_id}}">{{SachModel.nsx_name}}</a>
+                                        </li>
+                                    </ul>
+                
+                                    <ul>
+                                        <li>Số trang: {{SachModel.sotrang}}</li>
+                                        <li>Kích thước: {{SachModel.size}} cm</li>
+                                        <li>Ngày phát hành: {{SachModel.namsx}}</li>
+                                    </ul>
+                
+                                    
+                
+                                </div>
+                
+                
+                                <div class="action">
+                
+                                        <div class="price">
+                                            <p class="oldprice">
+                                                Giá bìa:  <span>120.000đ</span>
+                                            </p>
+                                            <p>Giá Nhã Nam: <span>{{SachModel.gia}}đ</span> (Đã có VAT)</p>
+                                            
+                                        </div>
+                                        <a href="#" class="buttonn" >Thêm vào giỏ hàng</a>
+                                        <a href="#" class="buttonn">Mua ngay</a>
+                                    
+                                </div>
+                
+                            </div>
+                
+                
+                
+                
+                        </div>
+                
+                
+                
+                    </div>
+                    <div class="bookdetailblockcontent">
+                        <h1> Giới thiệu sách</h1> <br>
+                        <p>
+                            Được viết ra ở nửa muộn của tuổi bảy mươi, với 9 màu chia ly – cuốn truyện ngắn thứ ba liên tiếp của Bernhard Schlink sau Những cuộc chạy trốn tình yêu và Mùa hè dối trả -  người đọc dễ đoán rằng ông nghĩ nhiều đến sự chia ly mà ai cũng phải làm trong đời. Và nghĩ đến quá khứ trước khi chia ly. Quả thực rất khó hình dung Schlink bên ngoài chủ đề văn chương gốc rễ của ống: sự đối mặt với dĩ vãng, với gánh nặng lịch sử và đạo lý... Nhưng với những cốt truyện đầy kịch tỉnh ở cả chín truyện ngắn, điều khó ngờ là tác giả có thể điềm tĩnh giữ cái kết ở tình trạng lửng lơ. Những màu của chia ly đều ở gam trầm, ngả về tiết thu chứ không xuân hè rực rỡ. Không thích hợp để ai đó đọc nhanh giết thì giờ một cách vô nghĩa, mà phải thấy giờ đọc là giờ quý giá của cuộc đời ta cần nâng niu!
+                        </p>
+                    </div>
+                    <div class="bookdetailblock bookdetailblockrelated" id="bookrelatedauthor">
+                        <h1> Sách cùng tác giả</h1>
+                        <article>
+                            
+                            <div ng-controller="HomeCtrl" class="bookslider">
+                                <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; inset: auto; z-index: auto; width: 900px; height: 210px; margin: 0px; overflow: hidden;"><ul class="clearfix listbook3" style="text-align: left; float: none; position: absolute; inset: 0px auto auto 0px; margin: 0px; width: 3300px; height: 210px;">
+                                <li ng-repeat="x in listCungTacGia" class="book3 bookimage0">
+                                    <a title="Kẻ dị biệt tại trường học phép thuật 9 - Khách phương xa (I)" class="image" href="../book/9-mau-chia-ly.html?id={{x.sanp_id}}">
+                            
+                                            <img src="../image/book/{{x.image}}" alt="Kẻ dị biệt tại trường học phép thuật 9 - Khách phương xa (I)">
+                            
+                                    </a>
+                            
+                                </li>
+                                
+                                
+                            
+                            </div>
+            
+                        </article>
+                    </div>
+                
+                
+                    
+                        
+                </div>
+                
+            </div>
+                          
+                            
+
+            
+        </div>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="footermenu clearfix">
+                    <div class="col">
+            
+                        <ul>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#"> Hình thức thanh toán</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col">
+            
+                        <ul>
+                            <li><a href="#">Quy định đổi, trả và huỷ đơn hàng</a></li>
+                            <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            
+                            <li><a href="#">Thông báo</a></li>
+                        </ul>
+                    </div>
+            
+            
+                    <div class="socialbtn">
+                        <img style="height: 100%; width: 100%;" src="../image/tải xuống (1).jpg">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

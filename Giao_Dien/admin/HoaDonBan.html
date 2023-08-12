@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logoCPT.png">
+    <link rel="stylesheet" href="../css/style_mainQT.css">
+    <script src="https://kit.fontawesome.com/e06076012c.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="/js/click.js"></script>
+    <script src="../angular/angular.min.js"></script>
+	<script src="../angular/admin.js"></script>
+    <script src="../angular/danhmuc.js"></script>
+    <title>Quản lý cửa hàng bán máy tính NCC</title>
+</head>
+
+<body ng-app="AppBanHang" ng-controller="HoaDonBanCtrl">
+    <section class="header">
+        <a href="../Untitled-1.html"><img style="height: 85%; margin-left: 10px;" src="../image/logo-mobile.png" alt=""></a>
+        <div class="box-login" id="box-t">
+            Xin chào, <span id="ten_nv">Admin</span> <i class="fas fa-sort-down"></i>
+            <div ng-controller="user" class="box-login-bottom" id="box-b">
+                <button onclick="TTTaiKhoan()"><i class="fas fa-user-alt"></i> Tài khoản</button>
+                <button ng-click="LogOut()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="row">
+            <div class=" category">
+                <ul>
+                    <li><a href="../admin/danhmuc.html"> Danh mục sách</a></li>
+                    <li><a href="../admin/LoaiSanPham.html"> Thể loại sách</a></li>
+                    <li><a href="../admin/SanPham.html"> Tác phẩm</a></li>
+                    <li><a href="../admin/NhaCungCap.html"> Nhà xuất bản</a></li>
+                    <li><a href="../admin/TacGia.html"> Tác giả</a></li>
+                    <li><a href="../admin/KhachHang.html"> Khách hàng</a></li>
+                    <li><a href="../admin/NhanVien.html"> Nhân viên</a></li>
+                    <li><a href="../admin/HoaDonNhap.html"> Hóa đơn nhập</a></li>
+                    <li><a href="../admin/HoaDonBan.html"> Hóa đơn bán</a></li>
+                    <li><a href="../admin/TinTuc.html">Kho</a></li>
+                    <li><a href="../admin/DonHang.html">Đơn hàng</a></li>
+                   
+                </ul>
+                
+                
+            </div>
+            <div class="bx-left" id="button-left">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeBTN()"><i
+                        class="far fa-window-close"></i></a>
+                <ul>
+                    <li onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</li>
+                    <li onclick="LoaiSanPham()"><i class="fas fa-boxes"></i> Loại sản phẩm</li>
+                    <li onclick="SanPham()"><i class="fas fa-barcode"></i> Sản phẩm</li>
+                    <li onclick="NhaCungCap()"><i class="fas fa-truck"></i> Nhà cung cấp</li>
+                    <li onclick="KhachHang()"><i class="fas fa-users"></i> Khách hàng</li>
+                    <li onclick="NhanVien()"><i class="fas fa-user"></i> Nhân viên</li>
+                    <li onclick="HoaDonNhap()"><i class="fas fa-file-import"></i> Hóa đơn nhập</li>
+                    <li onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</li>
+                    <li onclick="TinTuc()"><i class="fas fa-newspaper"></i> Tin tức</li>
+                    <li onclick="ThietLap()"><i class="fas fa-cogs"></i> Thiết lập</li>
+                </ul>
+            </div>
+            <div class="col-11 col-s-12 content">
+                <div class="col-6 col-s-12 content">
+                    <div class="tabcontent">
+                        <div class="title">
+                            <i class="fas fa-shopping-cart"></i> Nhập thông tin hóa đơn bán
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <form>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Mã hóa đơn bán:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" ng-model="soHoaDon" name="mahd" id="mahd"
+                                        placeholder="Nhập mã hóa đơn...Tự động sinh nếu không nhập...">
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Tên Khách hàng:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" id="khachhang" ng-model="maKhachHang">
+                                    
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Ngày bán:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" ng-model="ngayBan" id="sdtkh" placeholder="Ngày bán...">
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Mã chi tiết hoá đơn:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" id="emailkh" ng-model="maChiTietHoaDonBan" placeholder="Nhập mã chi tiết...">
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Mã sản phẩm:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" id="diachikh" ng-model="sanp_id" placeholder="Nhập mã sản phẩm...">
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Số lượng:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" ng-model="soLuong" id="tongsanpham">
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Giá bán:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" ng-model="giaBan" id="tongtien">
+                                </div>
+                                <br>
+                                <hr>
+                                <button type="submit" class="btn-form" ng-click="savehoadon()" >Thêm hóa đơn</button>
+                                <button type="submit" class="btn-form" ng-click="editHoaDon()" >Sửa hoá đơn</button>
+                                <button type="submit" class="btn-form" ng-click="xoaHoaDon(mahd)" >Xoá hoá đơn</button>
+                                <hr>
+                                <button type="submit" class="btn-form" ng-click="savechitiet()" >Thêm chi tiết hoá đơn</button>
+                                <button type="submit" class="btn-form" ng-click="editChiTiet()" >Sửa chi tiết hoá đơn</button>
+                                <button type="submit" class="btn-form" ng-click="xoaChiTiet()" >Xoá chi tiết hoá đơn</button>
+                            </form>
+                        </div>
+                       
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-6 col-s-12 content">
+                    <div class="tabcontent">
+                        <div class="title">
+                            <i class="fas fa-shopping-cart"></i> Danh sách hóa đơn bán
+                            <button onclick="XoaChon()" style="margin-right: 3px;"><i class="far fa-trash-alt"></i> Xóa
+                                chọn</button>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <form>
+                                <div class="col-10 col-s-12 padding-box">
+                                    <input name="ten" ng-model="ten" type="text"  placeholder="Nhập mã, tên thể loại...">
+                                </div>
+                                <div class="col-2 col-s-12 padding-box">
+                                    <button type="submit" ng-click="TimKiem(ten)"><i class="fas fas fa-search"></i> Tìm kiếm</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12 padding-box">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>Số hoá đơn</th>
+                                            <!-- <th>Mã chi tiết hoá đơn</th> -->
+                                            <th>Mã đơn hàng</th>
+                                            <th>Ngày bán</th>
+                                            <th>Tên khách hàng</th>
+                                            <!-- <th>Sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Giá bán</th>  -->
+                                        </tr>
+                                        
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat = "x in listHoaDon">
+                                           
+                                            <td>{{x.soHoaDon}}</td>
+                                            <!-- <td>{{x.maChiTietHoaDonBan}}</td> -->
+                                            <td>{{x.maDonHang}}</td>
+                                            <td>{{x.ngayBan}}</td>
+                                            <td>{{x.tenKhachHang}}</td>
+                                            <!-- <td>{{x.sanp_name}}</td>
+                                            <td>{{x.soLuong}}</td>
+                                            <td>{{x.giaBan}}</td> -->
+                                            <td><a href="ChiTietHoaDonBan.html?id={{x.soHoaDon}}"><i type="button"
+                                                style="color: black" class='fas fa-eye' style='font-size:18px'></i></a>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                   
+                                   
+                                </table>
+                            </div>
+                            <div class="col-12 col-s-12 padding-box">
+                                <div class="box-sum">
+                                    
+                                    <div class="box-right">
+                                        <button><i class="fas fa-angle-left"></i></button>
+                                        <button>1</button>
+                                        <button>2</button>
+                                        <button>3</button>
+                                        <button>4</button>
+                                        <button><i class="fas fa-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+</body>
+
+</html>

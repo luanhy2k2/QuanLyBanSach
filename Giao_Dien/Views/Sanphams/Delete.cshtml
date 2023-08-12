@@ -1,0 +1,153 @@
+﻿@model Dan3.Models.Sanpham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/AdminCP/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sanpham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sanp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sotrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sotrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tomtat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tomtat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namsx)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namsx)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loaisp.loai_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loaisp.loai_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nhasx.nsx_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhasx.nsx_name)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.sachbanchay.Sanpham.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sachbanchay.Sanpham.sanp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sachmoitaiban.Sanpham.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sachmoitaiban.Sanpham.sanp_name)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TG.TG_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TG.TG_name)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.thieunhi.Sanpham.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thieunhi.Sanpham.sanp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vanhocnuocngoai.Sanpham.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vanhocnuocngoai.Sanpham.sanp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vanhocvietnam.Sanpham.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vanhocvietnam.Sanpham.sanp_name)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

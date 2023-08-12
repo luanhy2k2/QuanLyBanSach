@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Dan3.Models.TG>
+
+<div  class="col-8 col-s-12 content">
+    <div class="tabcontent">
+        <div class="title">
+            <i class="fas fas fa-boxes"></i> Danh sách sách bán chạy
+
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-s-12 padding-box">
+                <table class="" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Mã tác giả</th>
+                            
+                            <th>
+                                Tên tác giả
+                            </th>
+                            <th>Địa chỉ </th>
+                            <th>Số điện thoại </th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.TG_id)</td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TG_name)
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.TG_diachi)</td>
+                            <td>@Html.DisplayFor(modelItem => item.sdt)</td>
+                            <td>
+                                @Html.ActionLink(" ", "Edit", new { id = item.TG_id }, new { @Class = "btn btn-warning fa fa-pencil" }) |
+                               
+                                @Html.ActionLink(" ", "Delete", new { id = item.TG_id }, new { @Class = "btn btn-danger fa fa-trash", @Onclick = "return confirm('Bạn có muốn xóa không?')" }) |
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+

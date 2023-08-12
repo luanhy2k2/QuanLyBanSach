@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Project_2/img/logoCPT.png">
+    <link rel="stylesheet" href="../CSS/style_mainQT.css">
+    <script src="https://kit.fontawesome.com/e06076012c.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="../angular/angular.min.js"></script>
+	<script src="../angular/admin.js"></script>
+    <script src="../angular/danhmuc.js"></script>
+</head>
+
+<body ng-app="AppBanHang" ng-controller="KhoCtrl">
+    <section class="header">
+        <a href="../Untitled-1.html"><img style="height: 85%; margin-left: 10px;" src="../image/logo-mobile.png" alt=""></a>
+        <div class="box-login" id="box-t">
+            Xin chào, <span id="ten_nv">Admin</span> <i class="fas fa-sort-down"></i>
+            <div ng-controller="user" class="box-login-bottom" id="box-b">
+                <button onclick="TTTaiKhoan()"><i class="fas fa-user-alt"></i> Tài khoản</button>
+                <button ng-click="LogOut()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="row">
+            <div class=" category">
+                <ul>
+                    <li><a href="../admin/danhmuc.html"> Danh mục sách</a></li>
+                    <li><a href="../admin/LoaiSanPham.html"> Thể loại sách</a></li>
+                    <li><a href="../admin/SanPham.html"> Tác phẩm</a></li>
+                    <li><a href="../admin/NhaCungCap.html"> Nhà xuất bản</a></li>
+                    <li><a href="../admin/TacGia.html"> Tác giả</a></li>
+                    <li><a href="../admin/KhachHang.html"> Khách hàng</a></li>
+                    <li><a href="../admin/NhanVien.html"> Nhân viên</a></li>
+                    <li><a href="../admin/HoaDonNhap.html"> Hóa đơn nhập</a></li>
+                    <li><a href="../admin/HoaDonBan.html"> Hóa đơn bán</a></li>
+                    <li><a href="../admin/TinTuc.html">Kho</a></li>
+                    <li><a href="../admin/DonHang.html">Đơn hàng</a></li>
+                   
+                </ul>
+                
+                
+            </div>
+            
+            <div class="col-11 col-s-12 content">
+                <div class="col-6 col-s-12 content">
+                    <div class="tabcontent">
+                        <div class="title">
+                            <i class="fas fa-newspaper"></i> Nhập thông tin tin tức
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <form class="modal fade" id = "addDanhMucModal" tabindex="-1" role="dialog">
+                                <!-- <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Mã danh mục:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" id="maloai"
+                                        placeholder="Nhập mã danh mục...Tự động sinh nếu không nhập...">
+                                </div> -->
+                                <div class="modal-body">
+									<div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Mã kho:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input name="id" ng-model="id" type="text" id="id" placeholder="Mã kho" class="col-xs-10 col-sm-5" />
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Tên kho:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="ten" type="text" id="form-field-1" placeholder="Tên kho" class="col-xs-10 col-sm-5" />
+									</div>
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Địa chỉ:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="diaChi" type="text" id="form-field-1" placeholder="Tên địa chỉ" class="col-xs-10 col-sm-5" />
+									</div>
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Sản phẩm:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="sanp_id" type="text" id="form-field-1" placeholder="Sản phẩm" class="col-xs-10 col-sm-5" />
+									</div>
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Số lượng:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="soLuong" type="text" id="form-field-1" placeholder="Số lượng" class="col-xs-10 col-sm-5" />
+									</div>
+								</div>
+								
+								<div class="modal-footer">
+									
+                        			  <button type="submit" ng-click="save()" class="btn-form" >Thêm danh mục</button>
+									  <button type="submit" ng-click="edit()" class="btn-form" >Sửa danh mục</button>
+									  <button type="submit" ng-click="xoa(id)" class="btn-form" >Xoá danh mục</button>
+									 <!-- <button type="submit" style="width: 100%;height: 100%; background-color: red;color: white;border: none;" ng-click="save()">GỬi</button> -->
+								</div>
+                                
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-6 col-s-12 content">
+                    <div class="tabcontent">
+                        <div class="title">
+                            <i class="fas fa-newspaper"></i> Danh sách thông tin kho
+                            
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <form>
+                                <div class="col-10 col-s-12 padding-box">
+                                    <input name="tenloai" ng-model="tenloai" type="text"  placeholder="Nhập mã, tên thể loại...">
+                                </div>
+                                <div class="col-2 col-s-12 padding-box">
+                                    <button type="submit" ng-click="TimKiem(tenloai)"><i class="fas fas fa-search"></i> Tìm kiếm</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12 padding-box">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>Mã kho</th>
+                                            <th>Tên kho</th>
+                                            <th>Địa chỉ</th>
+                                            <th>Sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            
+                                        </tr>
+                                        
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="x in listKho">
+                                           
+                                            <td>{{x.maKho}}</td>
+                                            <td>{{x.tenKho}}</td>
+                                            <td>{{x.diaChi}}</td>
+                                            <td>{{x.sanp_id}}</td>
+                                            <td>{{x.soLuong}}</td>
+                                            
+                                        </tr>
+                                        
+                                    </tbody>
+                                   
+                                   
+                                </table>
+                            </div>
+                            <div class="col-12 col-s-12 padding-box">
+                                <div class="box-sum">
+                                    
+                                    <div class="box-right">
+                                        <button><i class="fas fa-angle-left"></i></button>
+                                        <button>1</button>
+                                        <button>2</button>
+                                        <button>3</button>
+                                        <button>4</button>
+                                        <button><i class="fas fa-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </section>
+    
+</body>
+
+</html>

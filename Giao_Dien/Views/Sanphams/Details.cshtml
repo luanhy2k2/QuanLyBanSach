@@ -1,0 +1,186 @@
+﻿@model Dan3.Models.Sanpham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/AdminCP/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 col-s-12 content">
+    <div class="col-12 col-s-12 content">
+        <div class="tabcontent">
+            <div class="title">
+                <i class="fas fa-barcode"></i>Thông tin sách
+                <hr>
+            </div>
+            <div class="row">
+                <form>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Tên sách:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DisplayFor(model => model.sanp_name)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Kích thước:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DisplayFor(model => model.Size)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Tên tác giả:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DisplayFor(model => model.TG.TG_name)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Loại sách:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DisplayFor(model => model.Loaisp.loai_name)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Nội dung:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.Raw(Model.tomtat)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Tên nhà xuất bản:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DisplayFor(model => model.Nhasx.nsx_name)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Số trang:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DisplayFor(model => model.sotrang)
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Ngày sản xuất:</label>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DisplayFor(model => model.namsx)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Giá bán:</label>
+                        </div>
+                        <div st class="col-md-12">
+                            @Html.DisplayFor(model => model.price)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12 col-s-12 padding-box">
+                            <label for="txtright">Hình ảnh:</label>
+                        </div>
+                        <div class="col-md-10">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Image)
+                            </dt>
+                        </div>
+                    </div>
+
+                   
+                    @*<div class="col-12 col-s-12 padding-box">
+                <div class="col-md-offset-2 col-md-2">
+                    <div>
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+
+            </div>*@
+                </form>
+
+
+
+
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+
+
+
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.sachbanchay.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sachbanchay.sanp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sachmoitaiban.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sachmoitaiban.sanp_name)
+        </dd>*@
+
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.TG.TG_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TG.TG_name)
+        </dd>-->
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.thieunhi.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thieunhi.sanp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vanhocnuocngoai.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vanhocnuocngoai.sanp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vanhocvietnam.sanp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vanhocvietnam.sanp_name)
+        </dd>*@
+
+    <!--</dl>
+</div>
+<p>
+
+</p>-->

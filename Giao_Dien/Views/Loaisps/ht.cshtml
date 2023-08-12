@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Dan3.Models.Loaisp>
+@{ int i = 1;}
+<div class="col-8 col-s-12 content">
+    <div class="tabcontent">
+        <div class="title">
+            <i class="fas fas fa-boxes"></i> Danh sách loại sách
+
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-s-12 padding-box">
+                <table class="" id="dataTable">
+                    <thead>
+
+                        <tr>
+                            <th>Mã thể loại</th>
+
+                            <th>Tên thể loại</th>
+                            <th>Tên danh mục</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.loai_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.loai_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.danhmucs.danhmuc_name)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink(" ", "Edit", new { id = item.loai_id }, new { @Class = "btn btn-warning fa fa-pencil" })
+                               
+                                @Html.ActionLink(" ", "Delete", new { id = item.loai_id }, new { @Class = "btn btn-danger fa fa-trash", @Onclick = "return confirm('Bạn có muốn xóa không?')" })
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/cs.css">
+    <link rel="stylesheet" href="../CSS/core.css">
+    <link rel="stylesheet" href="../CSS/css_login.css">
+    <link rel="stylesheet" href="../CSS/stype.css">
+   
+    <script src="../angular/angular.min.js"></script>
+    <script src="../angular/global.js"></script>
+    <script src="../angular/home.js"></script>
+    
+    <script src="../js/js.js"></script>
+  
+</head>
+
+<body ng-app="AppBanHang" ng-controller="DonHangCtrl">
+    <div class="header">
+        <div class="wrapper wrap">
+            <h1 class="logo">
+                <a href="../Untitled-1.html">NhaNam</a>
+            </h1>
+        
+            
+            <div class="search">
+                <form action="/tim-kiem" method="GET" novalidate="novalidate">
+        
+                    <input type="text" name="q" placeholder="Tìm kiếm sách..." class="text">
+                    <input type="submit" value="Tìm kiếm" class="submit">
+                </form>
+        
+            </div>
+        </div>
+         
+    </div>
+    <div id="mainnav">
+
+        <div class="wrapper">
+    
+            <ul class="menu">
+                <li>
+                    <a href="z">
+                        Danh mục sách
+                    </a>
+                    <ul ng-controller="HomeCtrl" class="submenu">
+                            
+                        <li ng-repeat="x in listLoaiSp" ><a href="shop-grid.html?id={{x.loai_id}}">{{x.loai_name}}</a></li>
+                           
+    
+                    </ul>
+    
+                </li>
+                <!-- <li>
+                    <a href="/combo-sach">Combo Sách</a>
+                </li> -->
+    
+                <li>
+                    <a href="#">Sách bán chạy</a>
+                </li>
+    
+                <li>
+                    <a href="#">Chương trình khuyến mãi</a>
+                </li>			
+    
+                <li>
+                    <a href="/#">Giảm giá đặc biệt</a>
+                </li>
+        
+    
+    
+                
+            </ul>
+    
+        </div>
+    
+    </div>
+    <div class="bodii">
+        <h1 style=" text-align: center; background-color: black; color: azure;" >
+            Đơn hàng
+
+        </h1>
+        <div style="display: flex;">
+            <div class="form-nhap">
+                <h1 style="text-align: center;">THÔNG TIN THANH TOÁN</h1>
+                
+                <form>
+                    <div class="row" style="margin-top: 5px;">
+
+                        <div class="col-12 col-s-12">
+                            <div style="margin-top: 5px;">
+                                <label for="txt_ten"> Họ Tên </label><br>
+                                <input ng-model="tenKhachHang" id="txt_ten" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col-12 col-s-12">
+                            <label for="txt_dchi">Địa chỉ:</label><br>
+                            <input ng-model="diaChi" type="text" id="txt_dchi">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col-12 col-s-12">
+                            <label for="txt_email">Email <span style="color: red;" id="s_email"> </span> </label><br>
+                            <input ng-model="email" type="email" id="txt_email">
+                        </div>
+                    </div>
+    
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col-12 col-s-12">
+                            <label for="txt_dienthoai">Số điện thoại <span id="s_dienthoai"> </span></label><br>
+                            <input ng-model="sdt" type="text" id="txt_dienthoai">
+                        </div>
+                    </div>
+                    <button style="margin-left: 15px; background-color: darkgreen;" class="button" ng-click="dat()">ĐẶT HÀNG</button>
+                </form>
+            </div>
+            <div class="from-thanhtoan" style="margin-left: 15% ;">
+                <h1 style="text-align: center ;">ĐƠN HÀNG CỦA BẠN</h1>
+                <div class="row thanhtoan">
+                    <div class="col-6 col-s-12" style="text-align: left;">
+                        <label>SẢN PHẨM</label>
+                    </div>
+                    <div class="col-6 col-s-12" style="text-align: right;">
+                        <label>TỔNG</label>
+                    </div>
+                </div>
+                <div ng-repeat = "x in list" id="spham">
+
+                    <div class="row thanhtoan">
+                        <div class="col-6 col-s-12" style="text-align: left;">
+                            <label>{{x.sanp_name}} </label>
+                        </div>
+                        <div class="col-6 col-s-12" style="text-align: right;">
+                            <label>{{(x.gia * x.soLuong)}}</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="row thanhtoan">
+                    <div class="col-6 col-s-12" style="text-align: left;">
+                        <label>Tổng</label>
+                    </div>
+                    <div class="col-6 col-s-12" style="text-align: right;">
+                        <label id="tt">132.000</label>đ
+                    </div>
+                </div> -->
+                <div class="row thanhtoan">
+                    <div class="col-12 col-s-12" style="text-align: left;">
+                        <!-- <button ng-click="dat()">ĐẶT HÀNG</button> -->
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="footer">
+        <div class="">
+            <div class="footermenu ">
+                <div class="col">
+        
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#"> Hình thức thanh toán</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col">
+        
+                    <ul>
+                        <li><a href="#">Quy định đổi, trả và huỷ đơn hàng</a></li>
+                        <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        
+                        <li><a href="#">Thông báo</a></li>
+                    </ul>
+                </div>
+        
+        
+                <div class="socialbtn">
+                    <img style="height: 100%; width: 100%;" src="image/tải xuống (1).jpg">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var list = JSON.parse(localStorage.getItem('cart'));
+        
+        
+            
+        // function LoadData() {
+        //     var str = "";
+        //     var t = 0;
+        //     for (x of list) {
+        //         t += x.gia * x.quantity;
+        //         str += `
+        //         <div class="row thanhtoan">
+        //             <div class="col-6 col-s-12" style="text-align: left;">
+        //                 <label>` + x.sanp_name + `*` + x.quantity + `</label>
+        //             </div>
+        //             <div class="col-6 col-s-12" style="text-align: right;">
+        //                 <label>`+ (x.gia * x.quantity) + `đ</label>
+        //             </div>
+        //         </div>
+        //         `;
+        //     }
+        //     $('#spham').html(str);
+        //     $('#tt').html(t);
+        // }
+        // LoadData();
+       
+    </script>
+</body>
+    

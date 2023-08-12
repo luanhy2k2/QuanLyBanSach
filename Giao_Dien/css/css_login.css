@@ -1,0 +1,43 @@
+.bookdetailwrap {
+    background: url(../image/headerbg.png) repeat scroll 0 0 rgba(0,0,0,0);
+    box-shadow: 0 0 4px #444;
+    margin: 10px auto;
+    padding: 30px;
+    width: 940px;
+    min-height: 400px;
+}
+.pageheader {
+    padding: 24px 0 0;
+}
+.form{
+    display: block;
+}
+
+article{
+    display: block;
+}
+p {
+    display: block;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+.form p {
+    padding-top: 10px;
+}
+.form label {
+    display: block;
+}
+label {
+    cursor: default;
+}
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+.btn {
+    background: #00870a;
+    border: 1px solid #00870a;
+    color: #fff;
+    padding: 5px 10px;
+}

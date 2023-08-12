@@ -1,0 +1,70 @@
+﻿
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="~/Assets/Admin/CSSs/StyleSheet3.css">
+    <script src="https://kit.fontawesome.com/e06076012c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googlea/pis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/Assets/Admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="header">
+        <a href="/Home/"><img style="height: 85%; margin-left: 10px;" src="~/Assets/Admin/image/logo-mobile.png" alt=""></a>
+        <div class="box-login" id="box-t">
+            Xin chào, <span id="ten_nv">Admin</span> <i class="fas fa-sort-down"></i>
+
+        </div>
+    </section>
+    <section class="main">
+        <div class="row">
+            <div class="category">
+                <ul>
+                    <li><a href="/AdminCP/danhmucs/Create">Danh mục sách</a></li>
+                    
+                    <li><a href="/AdminCP/Sanphams/Index">Tác phẩm</a></li>
+                    <li><a href="/AdminCP/Nhasxes/Create">Nhà xuất bản</a></li>
+                    <li><a href="/AdminCP/TGs/Create">Tác giả</a></li>
+                    <li><a href="/AdminCP/slides/Create">Slides</a></li>
+                   
+                    <li><a href="/AdminCP/OrderDetails/Index">Chi tiết đơn hàng</a></li>
+                    <li><a href="/AdminCP/Orders/Index">Đơn hàng</a></li>
+
+                </ul>
+
+
+            </div>
+            <div class="col-12 col-s-12 content">
+
+                @RenderBody()
+            </div>
+
+
+        </div>
+
+    </section>
+    
+
+    
+
+    <script src="~/Assets/Admin/jquery/jquery.min.js"></script>
+    <script src="~/Assets/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Assets/Admin/js/ckeditor/ckeditor.js"></script>
+
+    <script src="~/Assets/Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/Assets/Admin/js/sb-admin-2.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", false)
+</body>
+</html>

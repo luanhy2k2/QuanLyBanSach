@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logoCPT.png">
+    <link rel="stylesheet" href="../css/style_mainQT.css">
+    <script src="https://kit.fontawesome.com/e06076012c.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="/js/click.js"></script>
+    <script src="../angular/angular.min.js"></script>
+	<script src="../angular/admin.js"></script>
+    <script src="../angular/danhmuc.js"></script>
+    
+    <script src="../ckeditor/ckeditor.js"></script>
+    
+</head>
+
+<body ng-app="AppBanHang" ng-controller="SanPhamCtrl">
+    <style>
+        .mains .row .content .tabcontent .row .padding-box span {
+        background-color:aliceblue;
+        color: black;
+    }
+    
+    </style>
+    <section class="header">
+        <a href="../Untitled-1.html"><img style="height: 85%; margin-left: 10px;" src="../image/logo-mobile.png" alt=""></a>
+        <div class="box-login" id="box-t">
+            Xin chào, <span id="ten_nv">Admin</span> <i class="fas fa-sort-down"></i>
+            <div ng-controller="user" class="box-login-bottom" id="box-b">
+                <button onclick="TTTaiKhoan()"><i class="fas fa-user-alt"></i> Tài khoản</button>
+                <button ng-click="LogOut()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="row">
+            <div class=" category">
+                <ul>
+                    <li><a href="../admin/danhmuc.html"> Danh mục sách</a></li>
+                    <li><a href="../admin/LoaiSanPham.html"> Thể loại sách</a></li>
+                    <li><a href="../admin/SanPham.html"> Tác phẩm</a></li>
+                    <li><a href="../admin/NhaCungCap.html"> Nhà xuất bản</a></li>
+                    <li><a href="../admin/TacGia.html"> Tác giả</a></li>
+                    <li><a href="../admin/KhachHang.html"> Khách hàng</a></li>
+                    <li><a href="../admin/NhanVien.html"> Nhân viên</a></li>
+                    <li><a href="../admin/HoaDonNhap.html"> Hóa đơn nhập</a></li>
+                    <li><a href="../admin/HoaDonBan.html"> Hóa đơn bán</a></li>
+                    <li><a href="../admin/TinTuc.html">Kho</a></li>
+                    <li><a href="../admin/DonHang.html">Đơn hàng</a></li>
+                </ul>
+                
+                
+            </div>
+            
+            <div class="col-11 col-s-12 content">
+                <div class="col-4 col-s-12 content">
+                    <div class="tabcontent">
+                        <div class="title">
+                            <i class="fas fa-barcode"></i> Nhập thông tin sách
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <form class="modal fade" id = "addSachModal" tabindex="-1" role="form">
+                                <!-- <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Mã danh mục:</label>
+                                </div>
+                                <div class="col-12 col-s-12 padding-box">
+                                    <input type="text" id="maloai"
+                                        placeholder="Nhập mã danh mục...Tự động sinh nếu không nhập...">
+                                </div> -->
+                                <div class="modal-body">
+									<div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Mã sách:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input name="id" ng-model="id" type="text" id="id" placeholder="Mã sách" class="col-xs-10 col-sm-5" />
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Tên sách:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="ten" type="text" id="form-field-1" placeholder="Tên sách" class="col-xs-10 col-sm-5" />
+									</div>
+
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Size:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="size" type="text" id="form-field-1" placeholder="Size" class="col-xs-10 col-sm-5" />
+									</div>
+
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Tác giả:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<!-- <input ng-model="tacgia" type="text" id="form-field-1" placeholder="Tác giả" class="col-xs-10 col-sm-5" /> 
+                                        -->
+                                        <select ng-model="tacgia">
+                                            <option ng-repeat=" x in listTg" value="{{x.tG_id}}">{{x.tG_name}}</option>
+                                        </select>
+									</div>
+
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Loại sản phẩm:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+                                        <select ng-model="loaisp">
+                                            <option ng-repeat=" x in listLoaisp" value="{{x.loai_id}}">{{x.loai_name}}</option>
+                                        </select>
+										<!-- <input ng-model="loaisp" type="text" id="form-field-1" placeholder="Loại sản phẩm" class="col-xs-10 col-sm-5" /> -->
+									</div>
+
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Nhà xuất bản:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<!-- <input ng-model="nhasanxuat" type="text" id="form-field-1" placeholder="Nhà xuất bản" class="col-xs-10 col-sm-5" /> -->
+                                        <select ng-model="nhasanxuat">
+                                            <option ng-repeat=" x in listNhasx" value="{{x.nsx_id}}">{{x.nsx_name}}</option>
+                                        </select>
+									</div>
+
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Số trang:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="sotrang" type="text" id="form-field-1" placeholder="Số trang" class="col-xs-10 col-sm-5" />
+									</div>
+
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Tóm tắt:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+                                        <input ng-model="tomtat" type="text" id="form-field-1" placeholder="Năm sản xuất" class="col-xs-10 col-sm-5" />
+								
+									</div>
+
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Năm sản xuất:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="namsx" type="date" id="form-field-1" placeholder="Năm sản xuất" class="col-xs-10 col-sm-5" />
+									</div>
+                                    <div class="col-12 col-s-12 padding-box">
+										<label for="txtright">Giá cả:</label>
+									</div>
+									<div class="col-12 col-s-12 padding-box">
+										<input ng-model="gia" type="text" id="form-field-1" placeholder="Giá cả" class="col-xs-10 col-sm-5" />
+									</div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Ảnh đại diện</label>
+                                        <div class="col-sm-9">
+                                            <input type="file" file="file" id = "file"/>
+                                        </div>
+                                    </div>
+								</div>
+								
+								<div class="modal-footer">
+									
+                        			  <button type="submit" ng-click="Saves()" class="btn-form" >Thêm danh mục</button>
+									  <button type="submit" ng-click="edit()" class="btn-form" >Sửa danh mục</button>
+									  <button type="submit" ng-click="xoa(id)" class="btn-form" >Xoá danh mục</button>
+									 <!-- <button type="submit" style="width: 100%;height: 100%; background-color: red;color: white;border: none;" ng-click="save()">GỬi</button> -->
+								</div>
+                                
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-8 col-s-12 content">
+                    <div class="tabcontent">
+                        <div class="title">
+                            <i class="fas fa-barcode"></i> Danh sách tác phẩm
+                            <button onclick="XoaChon()" style="margin-right: 3px;"><i class="far fa-trash-alt"></i> Xóa
+                                chọn</button>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <form>
+                                <div class="col-10 col-s-12 padding-box">
+                                    <input name="tenloai" ng-model="tenloai" type="text"  placeholder="Nhập mã, tên thể loại...">
+                                </div>
+                                <div class="col-2 col-s-12 padding-box">
+                                    <button type="submit" ng-click="TimKiem(tenloai)"><i class="fas fas fa-search"></i> Tìm kiếm</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12 padding-box">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>size</th>
+                                            <th>Tác giả</th>
+                                            <th>Loại sản phẩm</th>
+                                            <th>Nhà xuất bản</th>
+                                            <th>Số trang</th>
+                                            <th>Tóm tắt</th>
+                                            <th>Năm sản xuất</th>
+                                            <th>Image</th>
+                                            <th>Giá</th>
+                                            
+                                        </tr>
+                                        
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat = "x in listSanPham">
+                                           
+                                            <td>{{x.sanp_id}}</td>
+                                            <td>{{x.sanp_name}}</td>
+                                            <td>{{x.size}}</td>
+                                            <td>{{x.tG_name}}</td>
+                                            <td>{{x.loai_name}}</td>
+                                            <td>{{x.nsx_name}}</td>
+                                            <td>{{x.sotrang}}</td>
+                                            <td>{{x.tomtat}}</td>
+                                            <td>{{x.namsx}}</td>
+                                            <td>
+                                                <img src="../image/book/{{x.image}}" style="width:100px" />
+                
+                                            </td>
+                                            <td>{{x.gia}}</td>
+                                            
+                                        </tr>
+                                        
+                                    </tbody>
+                                   
+                                   
+                                </table>
+                            </div>
+                            <div class="col-12 col-s-12 padding-box">
+                                <div class="box-sum">
+                                    
+                                    <div class="box-right">
+                                        <button><i class="fas fa-angle-left"></i></button>
+                                        <button>1</button>
+                                        
+                                        ...
+                                        <button>4</button>
+                                        <button><i class="fas fa-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            CKEDITOR.replace('txtContent');
+        </script>
+    </section>
+    
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "viewdata";
+    Layout = "~/Areas/AdminCP/Views/Shared/_layoutadmin.cshtml";
+}
+<div class="container-fluid" ng-app="myapp" ng-controller="mycontrol">
+    <h2>Danh sách danh mục</h2>
+    <a class="btn btn-danger" href="inputData">Thêm mới</a>
+    <table class="table table-bordered table-striped" id="dataTable">
+        <thead>
+
+            <tr>
+                <th>Số thứ tự</th>
+                <th>
+                    Tên danh mục
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in datas">
+                <td>{{$index + 1}}</td>
+
+                <td>{{data.danhmuc_name}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div
+@section scripts
+{
+    <script>
+        var myapp = angular.module("myapp", []);
+        myapp.controller("mycontrol", mycontrol);
+        function mycontrol($scope, $http) {
+            $http.get("getalldata").then(function (res) {
+                $scope.datas = res.data
+            })
+        }
+    </script>
+}
+

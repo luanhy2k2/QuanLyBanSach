@@ -1,0 +1,191 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.bookdetailwrap {
+    background: url(../image/headerbg.png) repeat scroll 0 0 rgba(0,0,0,0);
+    margin: 10px auto;
+    padding: 30px;
+    width:80%;
+    min-height: 400px;
+    
+}
+
+.header .cart {
+    background-image: url(../image/cart.png) ;
+    background-repeat: no-repeat;
+    color: #000;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    text-indent: -500em;
+    text-transform: uppercase;
+    top: 20px;
+    width: 55px;
+    cursor: pointer;
+}
+
+.bookdetail {
+    padding: 10px 0 0;
+    color: #333;
+    height: 400px;
+    
+    
+    
+}
+.bookdetail .image {
+    float: left;
+    height: 342px;
+    width: 318px;
+    position: relative;
+    text-align: center;
+}
+.bookdetail .info {
+    margin-left: 366px;
+    height: 90%;
+    
+   
+}
+.bookdetail .info h1 {
+    border-bottom: 4px solid #cacbcc;
+    line-height: 0;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    
+}
+.bookdetail .info h1 a {
+    color: #015e00;
+    font-size: 16px;
+    line-height: 25px;
+}
+.bookdetail .attributes {
+    float: left;
+    width: 245px;
+    
+}
+.bookdetail li {
+    border-bottom: 1px solid #999;
+    color: #333;
+    line-height: 20px;
+    font-size: small;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+     
+}
+
+
+
+.bookdetail .action {
+    margin-left: 315px;
+    
+}
+.bookdetail .price p {
+    margin-bottom: 5px;
+    background: #0f5731;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 5px;
+}
+.bookdetail .price .oldprice {
+    background: #808081;
+    font-size: 12px;
+    padding: 5px;
+}
+.bookdetail .price .oldprice span {
+    text-decoration: line-through;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.bookdetail .price span {
+    padding-left: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.bookdetail li a {
+    color: #333;
+    font-weight: bold;
+}
+
+
+.bookdetailblockcontent {
+    color: #334;
+}
+.bookdetailblockcontent h1 {
+    border: medium none;
+    color: #0f5731;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 10px;
+    text-align: center;
+}
+.bookdetailblockcontent p{
+    font-size:13px;
+    line-height: 20px;
+}
+.action .button:hover {
+    background-color: red;
+}
+.action .button {
+    /* background: url(../image/book_button_bg.png) repeat scroll 0 0 rgba(0,0,0,0); */
+    background-color: #016600;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 28px;
+    padding: 0;
+    text-align: center;
+    width: 150px;
+}
+.button {
+    
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-right: 5px;
+} 
+
+.bookdetailblock {
+    border-top: 4px solid #cacbcc;
+    margin-top: 50px;
+    padding-top: 20px;
+    position: relative;
+}
+.bookdetailblock h1 {
+    background: none repeat scroll 0 0 #0f5731;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    left: 0;
+    padding: 8px 15px;
+    position: absolute;
+    text-transform: uppercase;
+    top: -32px;
+}
+.bookslider {
+    padding: 0 20px;
+    position: relative;
+}
+.book3 {
+    float: left;
+    width: 150px;
+    position: relative;
+    height: 210px;
+}
+.book3 .image {
+    padding: 10px;
+    display: block;
+}
+.book3 .image img {
+    width: 130px;
+    height: 190px;
+}   

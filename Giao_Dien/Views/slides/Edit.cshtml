@@ -1,0 +1,61 @@
+﻿@model Dan3.Models.slide
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/AdminCP/Views/Shared/_Layout.cshtml";
+}
+<div class="col-11 col-s-12 content">
+    <div class="col-4 col-s-12 content">
+        <div class="tabcontent">
+            <div class="title">
+                <i class="fas fa-barcode"></i> Sửa slide
+                <hr>
+            </div>
+            <div class="row">
+                @using (Html.BeginForm("Edit", "slides", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <form>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.slide_id)
+                            <div class="form-group">
+                                <div class="col-12 col-s-12 padding-box">
+                                    <label for="txtright">Hình ảnh:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="file" name="file1" id="file1" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-12 col-s-12 padding-box">
+                                    <div class="col-md-offset-2 col-md-5">
+                                        <input type="submit" value="Save" class="btn-form" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @Html.Action("ht")
+</div>
+
+@section scripts
+{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Assets/Admin/js/demo/datatables-demo.js"></script>
+}
+
+
+
+

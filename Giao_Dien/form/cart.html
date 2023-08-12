@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/cs.css">
+    <link rel="stylesheet" href="../CSS/core.css">
+    <link rel="stylesheet" href="../CSS/css_login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/cartcss.css">
+    <link rel="stylesheet" href="../form/tt.html">
+    <script src="../js/js.js"></script>
+    <script src="../angular/angular.min.js"></script>
+    <script src="../angular/global.js"></script>
+    <script src="../angular/home.js"></script>
+</head>
+
+<body ng-app="AppBanHang" ng-controller="HomeCtrl" style="opacity: 0.8;cursor: auto;visibility: visible;">
+   
+       
+        <div class="header">
+            <div class="wrapper wrap">
+                <h1 class="logo">
+                    <a href="../Untitled-1.html">NhaNam</a>
+                </h1>
+            
+                
+                <div class="search">
+                    <form action="/tim-kiem" method="GET" novalidate="novalidate">
+            
+                        <input type="text" name="q" placeholder="Tìm kiếm sách..." class="text">
+                        <input type="submit" value="Tìm kiếm" class="submit">
+                    </form>
+            
+                </div>
+            </div>
+             
+        </div>
+        <div id="mainnav">
+
+            <div class="wrapper">
+        
+                <ul class="menu">
+                    <li>
+                        <a href="z">
+                            Danh mục sách
+                        </a>
+                        <ul class="submenu">
+                            
+                            <li ng-repeat="x in listLoaiSp" >
+                                <a href="form/sachbanchay.html?ten={{x.loai_id}}">{{x.loai_name}}</a>
+                            </li>
+                               
+        
+                        </ul>
+        
+                    </li>
+                    <!-- <li>
+                        <a href="/combo-sach">Combo Sách</a>
+                    </li> -->
+        
+                    <li>
+                        <a href="#">Sách bán chạy</a>
+                    </li>
+        
+                    <li>
+                        <a href="#">Chương trình khuyến mãi</a>
+                    </li>			
+        
+                    <li>
+                        <a href="/#">Giảm giá đặc biệt</a>
+                    </li>
+            
+        
+        
+                    
+                </ul>
+        
+            </div>
+        
+        </div>
+        <div class="bodii">
+            <h1 style="background-color: black; color: azure; text-align: center;">
+                GIỎ HÀNG
+            </h1>
+            <br>
+            <table >
+                <tbody">
+                <tr >
+                    <th ><span>Hình ảnh</span></th>
+                    <th style="text-align: left;width: 40%;"> <span>Tiêu đề</span> </th>
+                    <th style="text-align: left;"><span>Giá</span></th>
+                    <th style="text-align: left;"><span>Số lượng</span></th>
+                    <th style="text-align: left;"><span>Tổng cộng</span></th>
+                    
+                </tr>
+                </tbody>
+                <tbody id="listCart">     
+                </tbody>
+                
+            </table>
+            <div class="abc">
+                
+                <div style="margin-left: 50px;  float: left; text-align: center;">
+                    <span>Tổng:</span>
+                    <span style="color: red; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" id="spTong">5000</span> <br>
+                    <button onclick="ThanhToan()"> Tiến hành thanh toán</button>
+                </div>
+                
+            </div>
+            
+
+        </div>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="footermenu">
+                    <div class="col">
+            
+                        <ul>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#"> Hình thức thanh toán</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col">
+            
+                        <ul>
+                            <li><a href="#">Quy định đổi, trả và huỷ đơn hàng</a></li>
+                            <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            
+                            <li><a href="#">Thông báo</a></li>
+                        </ul>
+                    </div>
+            
+            
+                    <div class="socialbtn">
+                        <img style="height: 100%; width: 100%;" src="../image/tải xuống (1).jpg">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    <script>
+        var list = JSON.parse(localStorage.getItem('cart')) || [];
+        function LoadData() {
+            var str = "";
+            var n = 0;
+            var t = 0;
+            for (x of list) {
+                t += x.gia * x.soLuong;
+                str += `<tr>
+                        
+                        <td ><img style="width: 50px; height: 50px; margin-left:30%" src="../image/book/`+ x.image + `"> </td>
+                        <td> `+ x.sanp_name +` </td>
+                        <td>`+ x.gia + `</td>
+                        <td> 
+                            <button onclick="Giam(`+ x.sanp_id + `)">-</button>
+                            <input id="q_`+ Number(x.sanp_id)+`" onchange="updateQuantity(`+ x.sanp_id + `)" type="text" value="`+ x.soLuong + `" style="width: 30px;" >
+                            <button onclick="Tang(`+ x.sanp_id + `)">+</button>
+                        </td>
+                        <td>`+ (x.gia * x.soLuong) + `</td>
+                        <td><i onclick="Xoa(`+ x.sanp_id + `)" class="fa fa-times-circle" style="font-size:30px;color:red;cursor: pointer;"></i></td>
+                    </tr>
+                 `;
+            }
+            //document.getElementById("listCart").innerHTML = str;
+            $('#listCart').html(str);
+            $("#spTong").text(t);
+        }
+
+        // function LoadData() {
+        //     var str = "";
+        //     var n = 0;
+        //     var t = 0;
+        //     for (x of list) {
+        //         t += x.price * x.quantity;
+        //         str += `<tr>
+                        
+        //                 <td ><img style="width: 50px; height: 50px; margin-left:30%" src="`+ x.image + `"> </td>
+        //                 <td> `+ x.name +` </td>
+        //                 <td>`+ x.price + `</td>
+        //                 <td> 
+        //                     <button onclick="Giam(`+ x.id + `)">-</button>
+        //                     <input id="q_`+ Number(x.id)+`" onchange="updateQuantity(`+ x.id + `)" type="text" value="`+ x.quantity + `" style="width: 30px;" >
+        //                     <button onclick="Tang(`+ x.id + `)">+</button>
+        //                 </td>
+        //                 <td>`+ (x.price * x.quantity) + `</td>
+        //                 <td><i onclick="Xoa(`+ x.id + `)" class="fa fa-times-circle" style="font-size:30px;color:red;cursor: pointer;"></i></td>
+        //             </tr>
+        //          `;
+        //     }
+        //     //document.getElementById("listCart").innerHTML = str;
+        //     $('#listCart').html(str);
+        //     $("#spTong").text(t);
+        // }
+        LoadData();
+        function ThanhToan() {
+            
+            window.location.href = "../form/tt.html";
+        }
+       
+        function Xoa(id) {
+            var index = list.findIndex(x => x.sanp_id == id);
+            if (index >= 0) {
+                list.splice(index, 1);
+            }
+            LoadData();
+            localStorage.setItem('cart', JSON.stringify(list));
+        }
+      
+        function Tang(id) {
+            var index = list.findIndex(x => x.sanp_id == id);
+            if (index >= 0) {
+                list[index].soLuong += 1; 
+            }
+            LoadData();
+        }
+        function Giam(id) {
+            var index = list.findIndex(x => x.sanp_id == id);
+            if (index >= 0 && list[index].soLuong >=1) {
+                list[index].soLuong -= 1; 
+            }
+            LoadData();
+        }
+        function updateQuantity(id) {
+            var soLuong = Number($('#q_'+id).val());
+            var index = list.findIndex(x => x.sanp_id == id);
+            if (index >= 0 && soLuong >=1) {
+                list[index].soLuong = soLuong; 
+            }
+            LoadData();
+        }
+        
+    </script>
+
+</body>
+
+</html>

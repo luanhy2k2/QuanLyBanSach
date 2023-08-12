@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    position: 0px;
+    margin: 0px;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bodii{
+  height: 90%;
+  min-height: 400px;
+
+ 
+  width: 80%; 
+  border: 5px solid gray; 
+  margin-bottom: 30px; 
+  border-radius: 2%; 
+  margin-left: 10%; 
+  margin-top: 30px;
+}
+ .panel .box img {
+     width: 100%;
+ }
+
+ .panel .box {
+   padding: 10px;
+}
+.box-content{
+    border: 1px solid red; 
+    position: relative;
+ }
+
+ .box-detail {
+    border-top: 1px solid red; 
+    text-align: center;
+    padding: 10px;
+ }
+ .box-name  {
+     color: black;
+     font-weight: bold;
+ }
+ .box-detail button {
+     border: none;
+     background-color: red;
+     line-height: 30px;
+     color: white;
+     text-transform: uppercase;
+ }
+
+ .box-giamgia {
+     position: absolute;
+     top: 20px;
+     left: -5px;
+     background-color: red;
+     color: white; 
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     display: flex;
+     line-height: 30px;
+     font-size: 13px;
+ }
+ .abc {
+  border-top: 1px solid red; width: 100%;
+  padding: 10px;text-align: right;
+ }
+ .abc button {
+   border: none;
+   background-color:green;
+   line-height: 35px;
+   color: white;
+ }
+ .abc button:hover {
+   cursor: pointer;
+   background-color: red;
+   
+ }
+
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+   
+}
